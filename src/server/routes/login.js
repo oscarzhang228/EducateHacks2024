@@ -3,9 +3,10 @@ import express from "express";
 const router = express.Router();
 
 router.post("/", async (req, res) => {
-  if (req.session.loggedin) {
-    return res.sendStatus(400);
-  }
+  console.log(req.body);
+  // if (req.session.loggedin) {
+  //   return res.sendStatus(400);
+  // }
 
   let user = req.body.username;
   let pass = req.body.password;

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
+import axios from "axios";
 
 function LoginPage() {
   const [username, setUsername] = useState("");
@@ -20,12 +21,10 @@ function LoginPage() {
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent the default form submission behavior
 
-    const response = await fetch("http://localhost:3000/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password }), // Send the username and password as JSON
+    console.log(username, password);
+    const response = await axios.post("http://localhost:3000/login", {
+      username: username,
+      password: password,
     });
 
     if (response.ok) {
