@@ -2,6 +2,8 @@ import express from "express";
 import LMS_Data from "../data/LMS_Data.json" assert { type: "json" };
 import cors from "cors";
 
+import login from "./routes/login.js";
+
 // Example Data from LMS
 // {
 // 	assignment_name: string representing name of assignment
@@ -9,37 +11,10 @@ import cors from "cors";
 // 	due_date: Date in MM Day, YEAR HR:MIN:SEC
 // }
 const app = express();
+
 app.use(cors());
 
-app.get("/", (req, res) => {
-  console.log("Hello, World!");
-});
-
-app.post("/login", async (req, res) => {
-  if (req.session.loggedin) {
-    return res.sendStatus(400);
-  }
-
-  let user = req.body.username;
-  let pass = req.body.password;
-  let userInfoCollection = db.collection("UserInfo");
-  let userFound = await userInfoCollection.find({ username: user }).toArray();
-  if (userFound.length != 0) {
-    if (userFound[0].password == pass) {
-      req.session.username = user; //we keep track of what user this session belongs to
-      req.session.loggedin = true;
-
-      if (userFound[0].patron === false) {
-        return res.status(300).json({ user: user });
-      }
-      return res.status(200).json({ user: user });
-    } else {
-      return res.sendStatus(401);
-    }
-  } else {
-    return res.status(201).json({ user: user });
-  }
-});
+app.use("./login", login);
 
 // import OpenAI from "openai";
 // const openai = new OpenAI();
