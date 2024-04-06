@@ -15,7 +15,7 @@ function LoginPage() {
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent the default form submission behavior
   
-    const response = await fetch('/login', {
+    const response = await fetch('/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
