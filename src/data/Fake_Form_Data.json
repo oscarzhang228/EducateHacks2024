@@ -7,9 +7,7 @@
       "Apr 9, 2024",
       "Apr 10, 2024",
       "Apr 11, 2024",
-      "Apr 12, 2024",
-      "Apr 13, 2024",
-      "Apr 14, 2024"
+      "Apr 12, 2024"
     ],
     "importance_scale": 3,
     "notes": "need to research and prepare slides"
@@ -22,9 +20,7 @@
       "Apr 9, 2024",
       "Apr 10, 2024",
       "Apr 11, 2024",
-      "Apr 12, 2024",
-      "Apr 13, 2024",
-      "Apr 14, 2024"
+      "Apr 12, 2024"
     ],
     "importance_scale": 4,
     "notes": "research and gather data"
@@ -37,9 +33,7 @@
       "Apr 9, 2024",
       "Apr 10, 2024",
       "Apr 11, 2024",
-      "Apr 12, 2024",
-      "Apr 13, 2024",
-      "Apr 14, 2024"
+      "Apr 12, 2024"
     ],
     "importance_scale": 2,
     "notes": "collaborate with group members"
@@ -52,9 +46,7 @@
       "Apr 9, 2024",
       "Apr 10, 2024",
       "Apr 11, 2024",
-      "Apr 12, 2024",
-      "Apr 13, 2024",
-      "Apr 14, 2024"
+      "Apr 12, 2024"
     ],
     "importance_scale": 5,
     "notes": "implement algorithms and test"
@@ -67,9 +59,7 @@
       "Apr 9, 2024",
       "Apr 10, 2024",
       "Apr 11, 2024",
-      "Apr 12, 2024",
-      "Apr 13, 2024",
-      "Apr 14, 2024"
+      "Apr 12, 2024"
     ],
     "importance_scale": 1,
     "notes": "review and revise"
@@ -82,71 +72,9 @@
       "Apr 9, 2024",
       "Apr 10, 2024",
       "Apr 11, 2024",
-      "Apr 12, 2024",
-      "Apr 13, 2024",
-      "Apr 14, 2024"
+      "Apr 12, 2024"
     ],
     "importance_scale": 3,
     "notes": "gather research materials"
-  },
-  {
-    "estimated_hours": 6,
-    "days_available": [
-      "Apr 7, 2024",
-      "Apr 8, 2024",
-      "Apr 9, 2024",
-      "Apr 10, 2024",
-      "Apr 11, 2024",
-      "Apr 12, 2024",
-      "Apr 13, 2024",
-      "Apr 14, 2024"
-    ],
-    "importance_scale": 4,
-    "notes": "collaborate with group members"
-  },
-  {
-    "estimated_hours": 4,
-    "days_available": [
-      "Apr 7, 2024",
-      "Apr 8, 2024",
-      "Apr 9, 2024",
-      "Apr 10, 2024",
-      "Apr 11, 2024",
-      "Apr 12, 2024",
-      "Apr 13, 2024",
-      "Apr 14, 2024"
-    ],
-    "importance_scale": 2,
-    "notes": "review lecture notes"
-  },
-  {
-    "estimated_hours": 5,
-    "days_available": [
-      "Apr 7, 2024",
-      "Apr 8, 2024",
-      "Apr 9, 2024",
-      "Apr 10, 2024",
-      "Apr 11, 2024",
-      "Apr 12, 2024",
-      "Apr 13, 2024",
-      "Apr 14, 2024"
-    ],
-    "importance_scale": 3,
-    "notes": "prepare presentation slides"
-  },
-  {
-    "estimated_hours": 3,
-    "days_available": [
-      "Apr 7, 2024",
-      "Apr 8, 2024",
-      "Apr 9, 2024",
-      "Apr 10, 2024",
-      "Apr 11, 2024",
-      "Apr 12, 2024",
-      "Apr 13, 2024",
-      "Apr 14, 2024"
-    ],
-    "importance_scale": 4,
-    "notes": "research and gather data"
   }
 ]

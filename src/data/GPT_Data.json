@@ -1,0 +1,65 @@
+[
+  {
+    "day": "April 07 2024",
+    "study_schedule": [
+      {
+        "assignment_name": "Group Project Report",
+        "class": "Computer Science 210",
+        "start_time": "8:00 AM",
+        "end_time": "12:00 PM"
+      },
+      {
+        "assignment_name": "Essay on Climate Change",
+        "class": "History 205",
+        "start_time": "12:00 PM",
+        "end_time": "3:00 PM"
+      },
+      {
+        "assignment_name": "Essay on Climate Change",
+        "class": "Biology 102",
+        "start_time": "3:00 PM",
+        "end_time": "4:00 PM"
+      }
+    ]
+  },
+  {
+    "day": "April 08 2024",
+    "study_schedule": [
+      {
+        "assignment_name": "Essay on Climate Change",
+        "class": "Biology 102",
+        "start_time": "8:00 AM",
+        "end_time": "10:00 AM"
+      },
+      {
+        "assignment_name": "Final Project Presentation",
+        "class": "History 205",
+        "start_time": "10:00 AM",
+        "end_time": "3:00 PM"
+      },
+      {
+        "assignment_name": "Group Project Report",
+        "class": "Environmental Science 101",
+        "start_time": "3:00 PM",
+        "end_time": "4:00 PM"
+      }
+    ]
+  },
+  {
+    "day": "April 09 2024",
+    "study_schedule": [
+      {
+        "assignment_name": "Group Project Report",
+        "class": "Environmental Science 101",
+        "start_time": "8:00 AM",
+        "end_time": "1:00 PM"
+      },
+      {
+        "assignment_name": "Essay on Climate Change",
+        "class": "Business Management 304",
+        "start_time": "1:00 PM",
+        "end_time": "3:00 PM"
+      }
+    ]
+  }
+]

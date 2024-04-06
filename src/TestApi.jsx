@@ -13,23 +13,11 @@ import fakeFormData from "./data/Fake_Form_Data.json";
 // ]
 function TestApi() {
   const fetchData = async () => {
-    // try {
-    //   const response = await axios.get("http://localhost:3000/gpt", {
-    //     params: fakeFormData,
-    //   });
-
-    //   // Handle the response data here
-    //   console.log(response);
-    // } catch (error) {
-    //   // Handle any errors that occur during the request
-    //   console.error(error);
-    // }
-
     try {
-      const response = await axios.post("http://localhost:3000/login", {
-        username: "your_username",
-        password: "your_password",
+      const response = await axios.get("http://localhost:3000/gpt", {
+        params: fakeFormData,
       });
+
       // Handle the response data here
       console.log(response);
     } catch (error) {
