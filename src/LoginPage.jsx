@@ -28,7 +28,7 @@ function LoginPage() {
     });
 
     if (response.ok) {
-      console.log("hello");
+       
     } else {
       console.log("Login failed");
       // Handle failed login here (e.g., show an error message)

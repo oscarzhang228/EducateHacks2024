@@ -4,9 +4,10 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
   console.log(req.body);
-  // if (req.session.loggedin) {
-  //   return res.sendStatus(400);
-  // }
+
+  if (req.session.loggedin) {
+      return res.sendStatus(400);
+   }
 
   let user = req.body.username;
   let pass = req.body.password;
