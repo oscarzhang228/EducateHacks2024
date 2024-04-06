@@ -1,7 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoginPage from "./LoginPage";
+import TestApi from "./TestApi.jsx";
 
 // Example Data from LMS
 // {
@@ -22,7 +23,10 @@ import LoginPage from "./LoginPage";
 function App() {
   return (
     <Router>
-      <Route path="/login" component={LoginPage} />
+      <Routes>
+        <Route path="/login" component={LoginPage} />
+        <Route path="/testing" element={<TestApi />} />
+      </Routes>
     </Router>
   );
 }

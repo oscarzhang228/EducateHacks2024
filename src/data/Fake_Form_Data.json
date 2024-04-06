@@ -1,0 +1,62 @@
+[
+  {
+    "estimated_hours": 5,
+    "days_available": ["Apr 20, 2024", "Apr 21, 2024"],
+    "importance_scale": 3,
+    "notes": "need to research and prepare slides"
+  },
+  {
+    "estimated_hours": 3,
+    "days_available": ["Apr 20, 2024", "Apr 21, 2024"],
+    "importance_scale": 4,
+    "notes": "research and gather data"
+  },
+  {
+    "estimated_hours": 6,
+    "days_available": ["Apr 20, 2024"],
+    "importance_scale": 2,
+    "notes": "collaborate with group members"
+  },
+  {
+    "estimated_hours": 4,
+    "days_available": ["Apr 20, 2024"],
+    "importance_scale": 5,
+    "notes": "implement algorithms and test"
+  },
+  {
+    "estimated_hours": 2,
+    "days_available": ["Apr 20, 2024"],
+    "importance_scale": 1,
+    "notes": "review and revise"
+  },
+  {
+    "estimated_hours": 3,
+    "days_available": ["Apr 20, 2024"],
+    "importance_scale": 3,
+    "notes": "gather research materials"
+  },
+  {
+    "estimated_hours": 6,
+    "days_available": ["Apr 20, 2024"],
+    "importance_scale": 4,
+    "notes": "collaborate with group members"
+  },
+  {
+    "estimated_hours": 4,
+    "days_available": ["Apr 20, 2024"],
+    "importance_scale": 2,
+    "notes": "review lecture notes"
+  },
+  {
+    "estimated_hours": 5,
+    "days_available": ["Apr 20, 2024"],
+    "importance_scale": 3,
+    "notes": "prepare presentation slides"
+  },
+  {
+    "estimated_hours": 3,
+    "days_available": ["Apr 20, 2024"],
+    "importance_scale": 4,
+    "notes": "research and gather data"
+  }
+]
