@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -15,7 +17,7 @@ function LoginPage() {
   const handleSubmit = async (event) => {
     event.preventDefault(); // Prevent the default form submission behavior
   
-    const response = await fetch('/', {
+    const response = await fetch('http://localhost:3000/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -24,16 +26,13 @@ function LoginPage() {
     });
   
     if (response.ok) {
-      const result = await response.json();
-      console.log(result);
-      // Handle successful login here (e.g., redirect to another page)
+      console.log("hello");
     } else {
       console.log('Login failed');
       // Handle failed login here (e.g., show an error message)
     }
   };
   
-
   return (
     <div>
       <form onSubmit={handleSubmit}>
