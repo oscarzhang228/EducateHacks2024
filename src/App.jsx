@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LoginPage from "./LoginPage";
 import TestApi from "./TestApi.jsx";
+import PlannerForm from "./PlannerForm.jsx";
 
 // Example Data from LMS
 // {
@@ -25,6 +26,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<LoginPage />} />
+        <Route path ="/planner" element = {<PlannerForm/>} />
         <Route path="/testing" element={<TestApi />} />
       </Routes>
     </Router>

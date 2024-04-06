@@ -6,6 +6,7 @@ import { MongoClient } from 'mongodb'; // Import express-session
 
 import login from "./routes/login.js";
 import gpt from "./routes/gpt.js";
+import planner from "./routes/planner.js"
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/login", login);
+app.use("/planner", planner);
 app.use("/gpt", gpt);
 
 app.listen(3000, () => {

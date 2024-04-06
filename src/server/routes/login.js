@@ -9,8 +9,9 @@ router.post("/", async (req, res) => {
       return res.sendStatus(400);
    }
 
-  let user = req.body.username;
-  let pass = req.body.password;
+  let username = req.body.username;
+  let password = req.body.password;
+  /*
   let userInfoCollection = db.collection("UserInfo");
   let userFound = await userInfoCollection.find({ username: user }).toArray();
   if (userFound.length != 0) {
@@ -28,7 +29,9 @@ router.post("/", async (req, res) => {
   } else {
     return res.status(201).json({ user: user });
   }
+  */
 });
+
 
 // Export the router
 export default router;

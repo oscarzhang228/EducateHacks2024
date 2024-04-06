@@ -19,15 +19,19 @@ function LoginPage() {
   };
 
   const handleSubmit = async (event) => {
+    //Added it here for the time being, move it when db works
+    navigate('/planner');
     event.preventDefault(); // Prevent the default form submission behavior
+    
 
-    console.log(username, password);
     const response = await axios.post("http://localhost:3000/login", {
       username: username,
       password: password,
     });
 
+   
     if (response.ok) {
+     
        
     } else {
       console.log("Login failed");
