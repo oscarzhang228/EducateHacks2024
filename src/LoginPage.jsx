@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
+
 import axios from "axios";
 
 function LoginPage() {
@@ -20,7 +21,7 @@ function LoginPage() {
 
   const handleSubmit = async (event) => {
     //Added it here for the time being, move it when db works
-    navigate('/planner');
+
     event.preventDefault(); // Prevent the default form submission behavior
     
 
@@ -28,10 +29,10 @@ function LoginPage() {
       username: username,
       password: password,
     });
-
+    console.log(response.status);
    
-    if (response.ok) {
-     
+    if (response.status === 200) {
+      navigate('/planner');
        
     } else {
       console.log("Login failed");

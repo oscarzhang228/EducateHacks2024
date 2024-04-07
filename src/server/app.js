@@ -2,7 +2,6 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
 import session from 'express-session';
-import { MongoClient } from 'mongodb'; // Import express-session
 
 import login from "./routes/login.js";
 import gpt from "./routes/gpt.js";
@@ -26,6 +25,8 @@ app.use("/login", login);
 app.use("/planner", planner);
 app.use("/gpt", gpt);
 
+
+
 app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+  console.log("Server is running on port 3000");
 });
