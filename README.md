@@ -55,4 +55,5 @@ By realizing these goals, OrganizeMe aspires to become the go-to service for stu
 
 # Installation instructions
 yarn install
+
 yarn dev
