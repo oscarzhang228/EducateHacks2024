@@ -28,14 +28,10 @@ function PlannerForm() {
             <Form.Control type="number" value={studyDays} onChange={(e) => setStudyDays(e.target.value)} required />
           </Form.Group>
 
-          <Form.Group controlId="gradeWeight">
-            <Form.Label>Grade weightage (%)</Form.Label>
-            <Form.Control type="number" value={gradeWeight} onChange={(e) => setGradeWeight(e.target.value)} required />
-          </Form.Group>
 
           <Form.Group controlId="importance">
             <Form.Label>Importance for you to do it (scale from 1 to 5)</Form.Label>
-            <Form.Control type="range" min="1" max="5" value={importance} onChange={(e) => setImportance(e.target.value)} required />
+            <Form.Control type="number" min="1" max="5" value={importance} onChange={(e) => setImportance(e.target.value)} required />
           </Form.Group>
 
           <Button variant="primary" type="submit" className="w-100 mt-3">
