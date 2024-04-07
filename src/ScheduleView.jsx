@@ -1,103 +1,114 @@
+import React, { useState } from "react";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import gptData from "./data/GPT_Data.json";
-const TASK_HEIGHT = 2.5;
+import styled from "styled-components";
 
-export default function ScheduleView() {
-  const scheduleContainerStyle = {
-    display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
-  };
-  return (
-    <section className="d-flex flex-column align-items-center w-100">
-      <h1>Generated Schedule</h1>
-      <section style={scheduleContainerStyle}>
-        {gptData.map((tasks, index) => {
-          return <Day key={index} tasks={tasks} />;
-        })}
-      </section>
-    </section>
-  );
-}
+const TASK_HEIGHT = 60; // Adjust this value as needed for task height
 
-const Day = ({ tasks }) => {
-  console.log(tasks);
-  const processedTasks = processTimes(tasks.study_schedule);
+const ScheduleView = () => {
+  const [data, setData] = useState(gptData);
 
-  return (
-    <section>
-      <h2>{tasks.day}</h2>
-      <section>
-        {processedTasks.map((task, index) => {
-          if (task.type === "task") {
-            return <Task key={index} task={task.task} />;
-          } else {
-            return <Filler key={index} height={task.height} />;
-          }
-        })}
-      </section>
-    </section>
-  );
-};
-
-/**
- * This function will take in an array of tasks and return an array of those tasks plus filler elements with the correct width to fill in the gaps between tasks. This will allow us to display the tasks in a schedule view with the correct spacing between them. Times start at 8am and end at 8pm, with each hour represented by a 1rem tall element. The tasks will be displayed in the correct position based on their start and end times.
- * @param {Object[]} tasks
- * @returns {Object[]} processedTasks
- */
-const processTimes = (tasks) => {
-  let processedTasks = [];
-  let currentHour = 8;
-  console.log(tasks);
-  for (let j = 0; j < tasks.length; j++) {
-    let task = tasks[j];
-    let taskStart = convertTimeToHour(task.start_time);
-    let taskEnd = convertTimeToHour(task.end_time);
-    console.log(taskStart, taskEnd);
-    let fillerHeight = taskStart - currentHour;
-    if (fillerHeight > 0) {
-      processedTasks.push({
-        type: "filler",
-        height: fillerHeight * TASK_HEIGHT,
-      });
+  const onDragEnd = (result) => {
+    // dropped outside the list
+    if (!result.destination) {
+      return;
     }
-    processedTasks.push({ type: "task", task: task });
-    currentHour = taskEnd;
-  }
-  const END_HOUR = 16;
-  let fillerHeight = END_HOUR - currentHour;
-  if (fillerHeight > 0) {
-    processedTasks.push({ type: "filler", height: fillerHeight * TASK_HEIGHT });
-  }
-
-  return processedTasks;
-};
-
-const convertTimeToHour = (time) => {
-  console.log(time);
-  const [hour, minutePeriod] = time.split(":");
-  const [minute, period] = minutePeriod.split(" ");
-  let convertedHour = parseInt(hour);
-  if (period === "PM" && convertedHour !== 12) {
-    convertedHour += 12;
-  } else if (period === "AM" && convertedHour === 12) {
-    convertedHour = 0;
-  }
-  return convertedHour + parseInt(minute) / 60;
-};
-
-const Task = ({ task }) => {
-  let taskStart = convertTimeToHour(task.start_time);
-  let taskEnd = convertTimeToHour(task.end_time);
-  const taskStyle = {
-    height: (taskEnd - taskStart) * TASK_HEIGHT + "rem",
+  
+    const { source, destination } = result;
+  
+    // deep copy of your tasks array
+    const newTasks = JSON.parse(JSON.stringify(data));
+  
+    // remove the dragged task from source index
+    const [removed] = newTasks[source.droppableId].splice(source.index, 1);
+  
+    // insert the dragged task at destination index
+    newTasks[destination.droppableId].splice(destination.index, 0, removed);
+  
+    // update state
+    setData(newTasks);
   };
-  console.log(task, taskStyle);
-  return <section style={taskStyle} className="border"></section>;
+  
+
+  return (
+    <DragDropContext onDragEnd={onDragEnd}>
+      <ScheduleContainer>
+        <h1>Generated Schedule</h1>
+        <DayContainer>
+          {data.map((day, index) => (
+            <Day key={index} day={day} dayIndex={index} />
+          ))}
+        </DayContainer>
+      </ScheduleContainer>
+    </DragDropContext>
+  );
 };
 
-const Filler = ({ height }) => {
-  const fillerStyle = {
-    height: height + "rem",
-    backgroundColor: "lightgray",
-  };
-  return <section style={fillerStyle} className="border"></section>;
+const Day = ({ day, dayIndex }) => {
+  return (
+    <DayColumn>
+      <h2>{day.day}</h2>
+      <Droppable droppableId={String(dayIndex)}>
+        {(provided) => (
+          <TaskList ref={provided.innerRef} {...provided.droppableProps}>
+            {day.study_schedule.map((task, index) => (
+              <Task key={index} task={task} index={index} dayIndex={dayIndex} />
+            ))}
+            {provided.placeholder}
+          </TaskList>
+        )}
+      </Droppable>
+    </DayColumn>
+  );
 };
+
+const Task = ({ task, index, dayIndex }) => {
+  return (
+    <Draggable draggableId={`task-${dayIndex}-${index}-${task.assignment_name}`} index={index}>
+  {(provided) => (
+    <TaskContainer
+      ref={provided.innerRef}
+      {...provided.draggableProps}
+      {...provided.dragHandleProps}
+    >
+      <h3>{task.assignment_name}</h3>
+      <p>{task.class}</p>
+      <p>{task.start_time} - {task.end_time}</p>
+    </TaskContainer>
+  )}
+  </Draggable>
+  );
+};
+
+// Styled components
+const ScheduleContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const DayContainer = styled.div`
+  display: flex;
+`;
+
+const DayColumn = styled.div`
+  margin-right: 20px;
+`;
+
+const TaskList = styled.div`
+  padding: 8px;
+  width: 250px;
+  min-height: 500px;
+  background-color: #f7f7f7;
+  border-radius: 4px;
+`;
+
+const TaskContainer = styled.div`
+  padding: 16px;
+  margin-bottom: 8px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+`;
+
+export default ScheduleView;

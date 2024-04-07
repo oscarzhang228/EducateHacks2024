@@ -2,15 +2,18 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
+import { useNavigate } from "react-router-dom";
 
 function PlannerForm() {
   const [studyHours, setStudyHours] = useState('');
   const [studyDays, setStudyDays] = useState('');
   const [gradeWeight, setGradeWeight] = useState('');
   const [importance, setImportance] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    navigate('/loading');
     console.log('Form data:', { studyHours, studyDays, gradeWeight, importance });
   };
 

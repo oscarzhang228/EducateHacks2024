@@ -9,16 +9,16 @@
         "end_time": "12:00 PM"
       },
       {
-        "assignment_name": "Essay on Climate Change",
+        "assignment_name": "Essay on WW2",
         "class": "History 205",
         "start_time": "12:00 PM",
-        "end_time": "3:00 PM"
+        "end_time": "15:00 PM"
       },
       {
         "assignment_name": "Essay on Climate Change",
         "class": "Biology 102",
-        "start_time": "3:00 PM",
-        "end_time": "4:00 PM"
+        "start_time": "16:00 PM",
+        "end_time": "17:00 PM"
       }
     ]
   },
@@ -32,16 +32,16 @@
         "end_time": "10:00 AM"
       },
       {
-        "assignment_name": "Final Project Presentation",
+        "assignment_name": "Essay on WW2",
         "class": "History 205",
         "start_time": "10:00 AM",
-        "end_time": "3:00 PM"
+        "end_time": "15:00 PM"
       },
       {
         "assignment_name": "Group Project Report",
         "class": "Environmental Science 101",
-        "start_time": "3:00 PM",
-        "end_time": "4:00 PM"
+        "start_time": "15:00 PM",
+        "end_time": "16:00 PM"
       }
     ]
   },
@@ -52,13 +52,13 @@
         "assignment_name": "Group Project Report",
         "class": "Environmental Science 101",
         "start_time": "8:00 AM",
-        "end_time": "1:00 PM"
+        "end_time": "13:00 PM"
       },
       {
         "assignment_name": "Essay on Climate Change",
         "class": "Business Management 304",
-        "start_time": "1:00 PM",
-        "end_time": "3:00 PM"
+        "start_time": "13:00 PM",
+        "end_time": "15:00 PM"
       }
     ]
   }

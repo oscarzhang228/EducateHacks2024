@@ -5,6 +5,7 @@ import LoginPage from "./LoginPage";
 import TestApi from "./TestApi.jsx";
 import PlannerForm from "./PlannerForm.jsx";
 import ScheduleView from "./ScheduleView.jsx";
+import Loading from "./Loading.jsx";
 
 // Example Data from LMS
 // {
@@ -29,6 +30,7 @@ function App() {
         <Route path="/" element={<LoginPage />} />
         <Route path="/planner" element={<PlannerForm />} />
         <Route path="/schedule" element={<ScheduleView />}></Route>
+        <Route path ="/loading" element={<Loading/>}></Route>
         <Route path="/testing" element={<TestApi />} />
       </Routes>
     </Router>
