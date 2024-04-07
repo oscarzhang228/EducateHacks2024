@@ -1,5 +1,5 @@
 # OrganizeMe
-![image](https://github.com/oscarzhang228/EducateHacks2024/assets/96605652/3a20b90c-fe96-4cde-babf-0f23b4a44ab8)
+![image](https://github.com/oscarzhang228/OrganizeMe/assets/96605652/a5894387-dd72-400c-bf82-49dece42f298)
 
 ## Inspiration 💡
 Schools now almost exclusively use digital means in order to communicate with students about their assignments, exams, and grades. Because of that, students can get overwhelmed with the huge amount of notifications and emails they get. 
