@@ -54,7 +54,5 @@ We hope to provide users more ways to custimize exactly how their schedule is ge
 By realizing these goals, OrganizeMe aspires to become the go-to service for students and take the stress out of planning assignments and exams. 
 
 # Installation instructions
-'''
 yarn install
 yarn dev
-'''
