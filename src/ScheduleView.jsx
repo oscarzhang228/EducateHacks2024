@@ -10,27 +10,21 @@ export default function ScheduleView() {
     <section className="d-flex flex-column align-items-center w-100">
       <h1>Generated Schedule</h1>
       <section style={scheduleContainerStyle}>
-        <div className="schedule-container">
-          <Day day="Monday" dayNum={0} />
-        </div>
-        <div className="schedule-container">
-          <Day day="Tuesday" dayNum={1} />
-        </div>
-        <div className="schedule-container">
-          <Day day="Wednesday" dayNum={2} />
-        </div>
+        {gptData.map((tasks, index) => {
+          return <Day key={index} tasks={tasks} />;
+        })}
       </section>
     </section>
   );
 }
 
-const Day = ({ day, dayNum }) => {
-  const processedTasks =
-    dayNum < gptData.length ? processTimes(gptData[dayNum]) : [];
-  console.log(processedTasks, dayNum, gptData.length);
+const Day = ({ tasks }) => {
+  console.log(tasks);
+  const processedTasks = processTimes(tasks.study_schedule);
+
   return (
     <section>
-      <h2>{day}</h2>
+      <h2>{tasks.day}</h2>
       <section>
         {processedTasks.map((task, index) => {
           if (task.type === "task") {
@@ -49,14 +43,15 @@ const Day = ({ day, dayNum }) => {
  * @param {Object[]} tasks
  * @returns {Object[]} processedTasks
  */
-const processTimes = (day) => {
+const processTimes = (tasks) => {
   let processedTasks = [];
   let currentHour = 8;
-  let tasks = day.study_schedule;
+  console.log(tasks);
   for (let j = 0; j < tasks.length; j++) {
     let task = tasks[j];
     let taskStart = convertTimeToHour(task.start_time);
     let taskEnd = convertTimeToHour(task.end_time);
+    console.log(taskStart, taskEnd);
     let fillerHeight = taskStart - currentHour;
     if (fillerHeight > 0) {
       processedTasks.push({
@@ -77,6 +72,7 @@ const processTimes = (day) => {
 };
 
 const convertTimeToHour = (time) => {
+  console.log(time);
   const [hour, minutePeriod] = time.split(":");
   const [minute, period] = minutePeriod.split(" ");
   let convertedHour = parseInt(hour);
